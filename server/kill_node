@@ -1,0 +1,4 @@
+#!/bin/bash
+node_port=$(sudo lsof -i -P -n | grep LISTEN | grep 'node' | cut -d " " -f 7)
+kill $node_port
+echo "node process killed process id: ${node_port}"
